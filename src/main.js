@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 
-import DepartmentView from './components/DepartmentView'
+import DepartmentView from './components/stats/DepartmentView'
 
 Vue.config.productionTip = false
 
@@ -28,3 +28,10 @@ new Vue({
     router
 }).$mount('#app')
 
+// window.onerror = function (message, source, lineNo, colNo, error) {
+//     alert(message)
+// }
+
+// Vue.config.errorHandler = function (err, vm, info) {
+//     alert(err)
+// }

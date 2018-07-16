@@ -9,8 +9,8 @@ export default {
         selected: false
     }),
     mounted () {
-        this.$bus.$on('search.select', (params) => {
-            if (params.type === 'application') {
+        this.$bus.$on(['search.select', 'search.remove', 'search.clear', 'search.run',], (e) => {
+            if (e && e.type === 'application') {
                 this.selected = true
             } else {
                 this.selected = false

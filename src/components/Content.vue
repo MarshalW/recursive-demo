@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button @click="handleLogout">登出</button>
         <h2>递归导航</h2>
         <hr/>
         <ul>
@@ -7,6 +8,7 @@
         </ul>
         <hr/>
         <router-view></router-view>
+
     </div>
 </template>
 
@@ -33,13 +35,22 @@ const tree = {
 
 export default {
     name: "Content",
-    components: {
-        NodeTree
+    props: ['tree'],
+    components:
+        {
+            NodeTree
+        }
+    ,
+    data: () => ({}),
+    mounted () {
     },
-    data: () => ({
-        tree
-    })
+    methods: {
+        handleLogout () {
+            this.$bus.$emit('auth.logout')
+        }
+    }
 }
+
 </script>
 
 <style scoped>
